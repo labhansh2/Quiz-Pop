@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .main {
+        height: 93.5vh;
+    }
+}
+
+.branding {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: xx-large;
+}
+
+.subpage_branding {
+    justify-content: left;
+}
+
+.instructionCard {
+    background-color: #04bfbf;
+    margin: 10px;
+    margin-top: 0px;
+    border-radius: 10px;
+    padding: 10px;
+    flex-grow: 1;
+    overflow: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infoCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: salmon;
+    padding: 18px;
+    border-radius: 10px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+th,
+td {
+    text-align: center;
+}
+
+.startQuizBtn {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
