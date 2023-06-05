@@ -9,11 +9,11 @@ results.
 ## Features
 
 -   Three Categories: You can choose from following categories: - Music,
-ModernArt, Coding
-<!-- -   Randomized questions: Each quiz session presents questions in a random
-    order, enhancing the challenge and variety. -->
--   Timed quizzes: Users can opt for timed quizzes to test their speed and
-    accuracy.
+    ModernArt, Coding
+    <!-- -   Randomized questions: Each quiz session presents questions in a random
+        order, enhancing the challenge and variety. -->
+    <!-- -   Timed quizzes: Users can opt for timed quizzes to test their speed and
+        accuracy. -->
 -   User-friendly interface: The application offers a clean and intuitive user
     interface, making it easy to navigate and enjoy the quiz experience.
 
