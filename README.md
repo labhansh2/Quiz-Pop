@@ -4,7 +4,7 @@ Quiz Pop is a JavaScript-based quiz application developed for the Upgrad India
 Hackathon based on their problem statement. It allows users take test and know
 results.
 
-> You can view the project by clicking [here](url)
+> You can view the project by clicking [here]([url](http://rough-history.surge.sh/))
 
 ## Features
 
