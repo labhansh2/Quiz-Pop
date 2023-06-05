@@ -31,19 +31,19 @@ if (taskOptions) {
         store("current", event.target.innerText);
     });
 
-    // taskOptions.addEventListener("click", function (event) {
-    //     if (event.target.classList.contains("resetBtn")) {
-    //         window.localStorage.clear();
+    taskOptions.addEventListener("click", function (event) {
+        if (event.target.classList.contains("resetBtn")) {
+            window.localStorage.clear();
 
-    //         taskOptions.querySelector(".option1").classList.remove("done");
-    //         taskOptions.querySelector(".option2").classList.remove("done");
-    //         taskOptions.querySelector(".option3").classList.remove("done");
+            taskOptions.querySelector(".option1").classList.remove("done");
+            taskOptions.querySelector(".option2").classList.remove("done");
+            taskOptions.querySelector(".option3").classList.remove("done");
 
-    //         store("Music", data.music);
-    //         store("Modern Art", data["modern-art"]);
-    //         store("Coding", data.coding);
-    //     }
-    // });
+            store("Music", data.music);
+            store("Modern Art", data["modern-art"]);
+            store("Coding", data.coding);
+        }
+    });
 
     if (verifyAllAnswered(fetch("Music"))) {
         taskOptions.querySelector(".option1").classList.add("done");
@@ -65,27 +65,37 @@ if (quizCard) {
     // render 1st question
     const current = fetch("current");
     let categoryObj = fetch(current);
+
     if (!fetch(`currentQNO-${current}`)) {
         store(`currentQNO-${current}`, 0);
     }
-    renderQuizCard(quizCard, fetch(current)[fetch("currentQNO")]);
+    renderQuizCard(quizCard, fetch(current)[fetch(`currentQNO-${current}`)]);
 
     quizCard.addEventListener("click", function (event) {
         if (event.target.parentElement.classList.contains("options")) {
             // update data
-            categoryObj[fetch("currentQNO")]["answered"] =
+            categoryObj[fetch(`currentQNO-${current}`)]["answered"] =
                 event.target.innerText;
             store(current, categoryObj);
             // update ui for option div
-            renderQuizCard(quizCard, fetch(current)[fetch("currentQNO")]);
+            renderQuizCard(
+                quizCard,
+                fetch(current)[fetch(`currentQNO-${current}`)]
+            );
         }
     });
 
     quizCard.addEventListener("click", function (event) {
         if (event.target.classList.contains("prev")) {
-            if (fetch("currentQNO") > 0) {
-                store("currentQNO", fetch("currentQNO") - 1);
-                renderQuizCard(quizCard, fetch(current)[fetch("currentQNO")]);
+            if (fetch(`currentQNO-${current}`) > 0) {
+                store(
+                    `currentQNO-${current}`,
+                    fetch(`currentQNO-${current}`) - 1
+                );
+                renderQuizCard(
+                    quizCard,
+                    fetch(current)[fetch(`currentQNO-${current}`)]
+                );
             }
             if (
                 fetch(current).every((element) => {
@@ -101,9 +111,15 @@ if (quizCard) {
             }
         }
         if (event.target.classList.contains("next")) {
-            if (fetch("currentQNO") < 9) {
-                store("currentQNO", fetch("currentQNO") + 1);
-                renderQuizCard(quizCard, fetch(current)[fetch("currentQNO")]);
+            if (fetch(`currentQNO-${current}`) < 9) {
+                store(
+                    `currentQNO-${current}`,
+                    fetch(`currentQNO-${current}`) + 1
+                );
+                renderQuizCard(
+                    quizCard,
+                    fetch(current)[fetch(`currentQNO-${current}`)]
+                );
             }
             if (verifyAllAnswered(fetch(current))) {
                 quizCard.querySelector(
