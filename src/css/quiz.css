@@ -30,7 +30,14 @@ body {
 
 .quizCard {
     border-radius: 10px;
-    background-color: #04bfbf;
+    /* background-color: #04bfbf; */
+    background: linear-gradient(
+        to bottom right,
+        #7db2f7,
+        #82bdf7,
+        #7fd9d9,
+        #f79991
+    );
     margin: 10px;
     margin-top: 0px;
     padding: 18px;
@@ -44,7 +51,8 @@ body {
 }
 
 .quizCard .question {
-    background-color: #f26f63;
+    /* background-color: #f26f63; */
+    background-color: paleturquoise;
     padding: 8px;
     border-radius: 10px;
 }
@@ -58,7 +66,8 @@ body {
     padding: 18px;
     border-radius: 10px;
     justify-content: center;
-    background-color: #0583f2;
+    /* background-color: #0583f2; */
+    background-color: bisque;
     margin-top: 5px;
 }
 

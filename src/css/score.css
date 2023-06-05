@@ -29,7 +29,13 @@ body {
 }
 
 .instructionCard {
-    background-color: #04bfbf;
+    background: linear-gradient(
+        to bottom right,
+        #7db2f7,
+        #82bdf7,
+        #7fd9d9,
+        #f79991
+    );
     margin: 10px;
     margin-top: 0px;
     border-radius: 10px;
@@ -49,7 +55,8 @@ body {
     justify-content: center;
     align-items: center;
 
-    background-color: salmon;
+    background-color: paleturquoise;
+
     padding: 18px;
     border-radius: 10px;
 }
